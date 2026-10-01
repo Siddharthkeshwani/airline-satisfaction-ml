@@ -1,0 +1,20 @@
+# Virtual environment
+venv/
+
+# Secrets
+.env
+
+# Python junk
+__pycache__/
+*.pyc
+
+# Notebook autosave folders
+.ipynb_checkpoints/
+
+# Data (the raw CSV stays on your machine, README says where to download it)
+data/raw/*.csv
+data/processed/
+
+# OS junk
+.DS_Store
+Thumbs.db
