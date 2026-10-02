@@ -1,0 +1,14 @@
+issue,columns,evidence,severity,planned_action,fix_in
+id has no information,id,Unique for every row (1 to 129880),Low,Drop before modelling,Step 5
+Missing arrival_delay,arrival_delay,393 rows (0.30%); these rows had a longer average departure delay (37.9 vs 14.6 min),Medium,Impute with the median inside the pipeline,Step 5 and 8
+Zero means not applicable,13 of the 14 rating columns (all except baggage_handling),"Six columns have over 100 zeros: time convenience 6681, online booking 5682, wifi 3916, online boarding 3080, leg room 598, food and drink 132",High,Decide how to treat zeros; add a not-rated count,Step 5
+Wifi zero and five are almost all satisfied,inflight_wifi_service,Score 0: 99.7% satisfied (3916 rows). Score 5: 99.0% satisfied (14356 rows),High,"Train with and without wifi, report both",Step 5 and 12
+Rows with many zero ratings are mostly satisfied,rating columns,3 zeros: 85.3% satisfied. 4 zeros: 98.7% satisfied. No zeros: 42.7%,Medium,Create a num_not_rated feature and test it,Step 5
+Heavy skew in delays and distance,"departure_delay, arrival_delay, flight_distance","Skew 6.82, 6.67 and 1.11",Medium,Log transform or scaling for linear models; trees are not affected,Step 8
+Many outliers in delays and distance,"departure_delay, arrival_delay, flight_distance","Delays reach 1592 and 1584 min. IQR rule flags 13.9% and 13.5% of delay values, and 2.2% of flight distances",Low,Keep them (real flights); check effect on linear models,Step 8 and 9
+Delay columns nearly identical,"departure_delay, arrival_delay",Correlation 0.965,Medium,"Keep one, or build a delay difference feature",Step 5
+Age effect is not a straight line,age,Satisfaction rises to the 46-55 band then falls,Low,Try age groups,Step 5
+Gate location barely related to target,gate_location,Correlation about 0.00,Low,Candidate to drop; test,Step 5
+Target mildly imbalanced,satisfaction,43.4% Satisfied vs 56.6% not; guessing the bigger class gives 56.6%,Low,Stratified split; report F1 and ROC-AUC,Step 7 and 10
+Target is text,satisfaction,Two text labels,Low,Map to 1 and 0,Step 5
+Clean checks passed,all,"No duplicates, no impossible values, no stray spaces in text",None,Nothing to do,-
