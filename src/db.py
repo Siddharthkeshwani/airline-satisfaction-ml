@@ -42,7 +42,7 @@ def run_query(sql, engine=None, params=None):
 
 
 def fetch_table(engine=None, table=TABLE_NAME):
-    return run_query(f"select * from {table}", engine=engine)
+    return run_query(f"select * from {table} ORDER BY id", engine=engine)
 
 
 if __name__== "__main__":
