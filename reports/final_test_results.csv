@@ -1,0 +1,6 @@
+,with wifi,without wifi
+accuracy,96.53,94.79
+precision,97.8,95.55
+recall,94.13,92.3
+f1,95.93,93.9
+roc_auc,99.54,98.71
