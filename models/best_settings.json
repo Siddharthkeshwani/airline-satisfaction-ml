@@ -1,0 +1,46 @@
+{
+  "with_wifi": {
+    "LightGBM": {
+      "lgbmclassifier__num_leaves": 63,
+      "lgbmclassifier__n_estimators": 300,
+      "lgbmclassifier__min_child_samples": 40,
+      "lgbmclassifier__learning_rate": 0.03,
+      "lgbmclassifier__colsample_bytree": 0.8
+    },
+    "XGBoost": {
+      "xgbclassifier__n_estimators": 300,
+      "xgbclassifier__min_child_weight": 3,
+      "xgbclassifier__max_depth": 10,
+      "xgbclassifier__learning_rate": 0.03,
+      "xgbclassifier__colsample_bytree": 0.8
+    },
+    "Random Forest": {
+      "randomforestclassifier__n_estimators": 100,
+      "randomforestclassifier__min_samples_leaf": 3,
+      "randomforestclassifier__max_features": 0.5,
+      "randomforestclassifier__max_depth": 30
+    }
+  },
+  "without_wifi": {
+    "LightGBM": {
+      "lgbmclassifier__num_leaves": 127,
+      "lgbmclassifier__n_estimators": 100,
+      "lgbmclassifier__min_child_samples": 20,
+      "lgbmclassifier__learning_rate": 0.05,
+      "lgbmclassifier__colsample_bytree": 0.8
+    },
+    "XGBoost": {
+      "xgbclassifier__n_estimators": 300,
+      "xgbclassifier__min_child_weight": 3,
+      "xgbclassifier__max_depth": 10,
+      "xgbclassifier__learning_rate": 0.03,
+      "xgbclassifier__colsample_bytree": 0.8
+    },
+    "Random Forest": {
+      "randomforestclassifier__n_estimators": 100,
+      "randomforestclassifier__min_samples_leaf": 3,
+      "randomforestclassifier__max_features": 0.5,
+      "randomforestclassifier__max_depth": 30
+    }
+  }
+}

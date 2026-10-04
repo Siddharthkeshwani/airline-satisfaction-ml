@@ -1,0 +1,4 @@
+,f1 default,f1 tuned,accuracy tuned,roc_auc tuned,gap default,gap tuned,f1 change
+LightGBM,93.17,93.54,94.49,98.67,0.35,0.68,0.37
+XGBoost,93.16,93.5,94.46,98.67,1.87,2.05,0.34
+Random Forest,93.12,93.35,94.33,98.51,5.88,3.49,0.23
