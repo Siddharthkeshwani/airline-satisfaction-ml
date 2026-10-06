@@ -2,7 +2,7 @@
 
 A machine learning project that estimates whether an airline passenger was satisfied, using their trip details and service ratings. The data lives in PostgreSQL, the final model is a tuned LightGBM, and a Streamlit app lets anyone try it.
 
-**Live app:** _add the link here after Step 17_
+**Live app:** https://airline-satisfaction-ml-w9cpe5rwe6acpz7vqrkduf.streamlit.app/
 
 ## The question
 
