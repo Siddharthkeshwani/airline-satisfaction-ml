@@ -1,0 +1,78 @@
+{
+  "saved_on": "2026-10-06",
+  "model": "LightGBM inside a scikit-learn pipeline",
+  "answer": "1 = satisfied, 0 = neutral or dissatisfied",
+  "cut_off": 0.5,
+  "trained_on_rows": 103904,
+  "versions": {
+    "python": "3.12.10",
+    "scikit-learn": "1.9.1",
+    "lightgbm": "4.7.0",
+    "pandas": "3.0.6"
+  },
+  "with_wifi": {
+    "file": "lightgbm_with_wifi.joblib",
+    "columns": [
+      "customer_type",
+      "type_of_travel",
+      "travel_class",
+      "age",
+      "flight_distance",
+      "departure_delay",
+      "ease_of_online_booking",
+      "checkin_service",
+      "online_boarding",
+      "onboard_service",
+      "seat_comfort",
+      "leg_room_service",
+      "cleanliness",
+      "food_and_drink",
+      "inflight_service",
+      "inflight_wifi_service",
+      "inflight_entertainment",
+      "baggage_handling"
+    ],
+    "settings": {
+      "lgbmclassifier__num_leaves": 63,
+      "lgbmclassifier__n_estimators": 300,
+      "lgbmclassifier__min_child_samples": 40,
+      "lgbmclassifier__learning_rate": 0.03,
+      "lgbmclassifier__colsample_bytree": 0.8
+    },
+    "test_accuracy": 96.53,
+    "test_f1": 95.93,
+    "test_roc_auc": 99.54
+  },
+  "without_wifi": {
+    "file": "lightgbm_no_wifi.joblib",
+    "columns": [
+      "customer_type",
+      "type_of_travel",
+      "travel_class",
+      "age",
+      "flight_distance",
+      "departure_delay",
+      "ease_of_online_booking",
+      "checkin_service",
+      "online_boarding",
+      "onboard_service",
+      "seat_comfort",
+      "leg_room_service",
+      "cleanliness",
+      "food_and_drink",
+      "inflight_service",
+      "inflight_entertainment",
+      "baggage_handling"
+    ],
+    "settings": {
+      "lgbmclassifier__num_leaves": 127,
+      "lgbmclassifier__n_estimators": 100,
+      "lgbmclassifier__min_child_samples": 20,
+      "lgbmclassifier__learning_rate": 0.05,
+      "lgbmclassifier__colsample_bytree": 0.8
+    },
+    "test_accuracy": 94.79,
+    "test_f1": 93.9,
+    "test_roc_auc": 98.71
+  }
+}
